@@ -14,5 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	return (ft_memchr(s, c, ft_strlen(s) + 1));
+	size_t	i;
+
+	if (c == 0)
+		return ((char *)s + ft_strlen(s));
+	i = 0;
+	while (s[i])
+	{
+		if (((unsigned char)c) == ((unsigned char *)s)[i])
+			return (((char *)s) + i);
+		i++;
+	}
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: sifreita <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 00:40:59 by sifreita          #+#    #+#             */
-/*   Updated: 2021/10/28 00:41:00 by sifreita         ###   ########.fr       */
+/*   Updated: 2021/11/25 18:22:17 by sifreita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
+	if (!s)
+		return ;
 	i = 0;
 	while (s[i])
 	{
