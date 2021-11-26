@@ -1,28 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_printf_fncts1.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sifreita <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/21 18:01:59 by sifreita          #+#    #+#             */
-/*   Updated: 2021/10/22 18:45:45 by sifreita         ###   ########.fr       */
+/*   Created: 2021/11/26 02:52:37 by sifreita          #+#    #+#             */
+/*   Updated: 2021/11/26 02:52:38 by sifreita         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int	ft_printf_c(char c)
 {
-	size_t	i;
+	write (1, &c, 1);
+	return (1);
+}
 
-	if (!dst && !src)
-		return (0);
+int	ft_printf_s(char *c)
+{
+	int	i;
+
 	i = 0;
-	while (i < n)
+	while (c[i])
 	{
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		write(1, &c[i], 1);
 		i++;
 	}
-	return (dst);
+	return (ft_strlen(c));
+}
+
+int	ft_printf_d(int n)
+{
+	int	t;
+
+	t = 0;
+	if (n == -2147483648)
+	{
+		write (1, "-2147483648", 11);
+		return (11);
+	}
+	if (n < 0)
+	{
+		write (1, "-", 1);
+		n = -n;
+		t = t + 1;
+	}
+	ft_printf_num(n, "0123456789");
+	t = t + ft_numlen(n, 10);
+	return (t);
 }
