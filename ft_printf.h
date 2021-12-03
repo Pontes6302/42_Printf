@@ -16,19 +16,21 @@
 # include <stdarg.h>
 # include <unistd.h>
 
+int		ft_printf(const char *par, ...);
+
 int		ft_printf_c(char c);
 int		ft_printf_s(char *c);
 int		ft_printf_d(int n);
 
 int		ft_printf_x(unsigned int n);
 int		ft_printf_xm(unsigned int n);
-int		ft_printf_p(unsigned long int n);
+int		ft_printf_p(unsigned long long int n);
 int		ft_printf_i(int n);
 int		ft_printf_u(unsigned int n);
 
 int		ft_strchr(char *str, char c);
 int		ft_strlen(char *str);
-int		ft_numlen(long long int n, int base);
+int		ft_numlen(unsigned long long int n, int base);
 void	ft_printf_num(unsigned long int n, char *base);
 
 #endif

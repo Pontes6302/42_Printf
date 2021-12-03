@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 void	*ft_redirect(char c)
 {
@@ -18,17 +19,17 @@ void	*ft_redirect(char c)
 		return (ft_printf_c);
 	if (c == 's')
 		return (ft_printf_s);
-	if (c == 'p')
-		return (ft_printf_p);
+	if (c == 'X')
+		return (ft_printf_xm);
 	if (c == 'd')
 		return (ft_printf_d);
 	if (c == 'i')
-		return (ft_printf_i);
+		return (ft_printf_d);
 	if (c == 'u')
 		return (ft_printf_u);
 	if (c == 'x')
 		return (ft_printf_x);
-	return (ft_printf_xm);
+	return (ft_printf_p);
 }
 
 int	ft_printf(const char *par, ...)
@@ -54,38 +55,3 @@ int	ft_printf(const char *par, ...)
 	va_end(ag);
 	return (c);
 }
-
-// int	main(void)
-// {
-// 	int a = printf("Hello World\n");
-// 	int b = ft_printf("Hello World\n");
-// 	printf("Results Original: %d\nYours: %d\n", a, b);
-// 	a = printf("%d\n", 10000);
-// 	b = ft_printf("%d\n", 10000);
-// 	printf("Results Original: %d\nYours: %d\n", a, b);
-// 	a = printf("%d\n", -123421);
-//         b = ft_printf("%d\n", -123421);
-// 	printf("Results Original: %d\nYours: %d\n", a, b);
-// 	a = printf("%d\n", 0);
-//         b = ft_printf("%d\n", 0);
-// 	printf("Results Original: %d\nYours: %d\n", a, b);
-// 	a = printf("%u\n", -123421);
-//         b = ft_printf("%u\n", -123421);
-// 	printf("Results Original: %d\nYours: %d\n", a, b);
-// 	a = printf("%d\n", 321);
-//         b = ft_printf("%d\n", 321);
-// 	printf("Results Original: %d\nYours: %d\n", a, b);
-// 	a = printf("%x\n", -123421);
-//         b = ft_printf("%x\n", -123421);
-// 	printf("Results Original: %d\nYours: %d\n", a, b);
-// 	a = printf("%X\n", -7776);
-//         b = ft_printf("%X\n", -7776);
-// 	printf("Results Original: %d\nYours: %d\n", a, b);
-// 	a = printf("%p\n", &a);
-//         b = ft_printf("%p\n", &a);
-// 	printf("Results Original: %d\nYours: %d\n", a, b);
-// 	a = printf("%s\n", "Hello Wiorld!!!!");
-//         b = ft_printf("%s\n", "Hello Wiorld!!!!");
-// 	printf("Results Original: %d\nYours: %d\n", a, b);
-// 	return (0);
-// }

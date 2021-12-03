@@ -23,6 +23,11 @@ int	ft_printf_s(char *c)
 	int	i;
 
 	i = 0;
+	if (!c)
+	{
+		write (1, "(null)", 6);
+		return (6);
+	}
 	while (c[i])
 	{
 		write(1, &c[i], 1);

@@ -36,7 +36,7 @@ int	ft_strchr(char *str, char c)
 	return (0);
 }
 
-int	ft_numlen(long long int n, int base)
+int	ft_numlen(unsigned long long int n, int base)
 {
 	int	t;
 
